@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Orion Editor Snippet</title>
+
+<style>
+.editor {
+	border: 1px solid #ddd;
+	position: relative;
+	width: 100%;
+	height: 400px;
+}
+</style>
+<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/dojo/1.9.1/dijit/themes/claro/claro.css" media="screen">
+<link rel="stylesheet" type="text/css" href="//eclipse.org/orion/editor/releases/latest/built-editor.css"/>
+
+<script>
+	var dojoConfig = {
+		parseOnLoad: true,
+		async: false,
+		aliases: [
+			['i18n', 'dojo/i18n'],
+			['text', 'dojo/text'],
+			['domReady', 'dojo/domReady']
+		]
+	};
+</script>
+<script src="http://ajax.googleapis.com/ajax/libs/dojo/1.9.1/dojo/dojo.js.uncompressed.js"></script>
+
+<script>
+	/*globals require*/
+	require(['built-editor-amd.js', "dojoSnippet.js", "dojo/_base/window"], function(edit, DojoEditor, win) {
+		var editor = new DojoEditor();
+		editor.placeAt(win.body());
+		editor.startup();
+	});
+</script>
+
+
+</head>
+<body spellcheck="false">
+<h2>SQL Content Assist</h2>
+This snippet shows how to use the Orion stand alone editor with dojo.
+<br>
+<br>
+
+</body>
+</html>
